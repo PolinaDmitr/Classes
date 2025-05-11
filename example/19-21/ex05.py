@@ -5,12 +5,13 @@ from functools import lru_cache
 def step(h):
     x, last = h
     a = []
-    if x != '+1':
+    if last != '+1':
         a.append((x + 1, '+1'))
-    if x != '*2':
+    if last != '*2':
         a.append((x * 2, '*2'))
-    if x != '*3':
-        a.append((x * 3))
+    if last != '*3':
+        a.append((x * 3, '*3'))
+    return a
 
 
 @lru_cache(None)
