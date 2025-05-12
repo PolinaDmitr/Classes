@@ -1,0 +1,15 @@
+def f(x, y, c):
+    if x in (8, 16, 32):
+        if c:
+            return 0
+        c = True
+    if x > y:
+        return 0
+    if x == y:
+        if c:
+            return 1
+        return 0
+    return f(x + 1, y, c) + f(x + 4, y, c) + f(x * 2, y, c)
+
+
+print(f(1, 50, False))
